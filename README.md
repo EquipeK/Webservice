@@ -1,7 +1,5 @@
-# Ce fichier concerne l'installation depuis un projet vierge.
-# Si vous faites un clone du projet, il n'y aura pas besoin de ces commandes.
-
-## Pour adapter ce projet à vos projets en partant de ce repo
+# Si vous faites un clone de ce projet
+# Pour adapter ce projet à vos projets en partant de ce repo
 
 - Pour la base de données, vous pourrez modifier le fichier /src/settings.php .
 
@@ -28,6 +26,9 @@
 
 - Pour gérer les routes, ça se passe dans le fichier /src/routes.php .
 - Le fichier /src/middleware.php permet de mettre en place une sécurisation par API key par exemple. 
+
+
+# Si l'installation conerne un projet vierge.
 
 # Slim Framework 3 Skeleton Application
 
