@@ -1,5 +1,5 @@
 # Ce fichier concerne l'installation depuis un projet vierge.
-# Si vous faites un clone du projet, il n'y aura pas besoin de passer ces commandes.
+# Si vous faites un clone du projet, il n'y aura pas besoin de ces commandes.
 
 
 # Slim Framework 3 Skeleton Application
