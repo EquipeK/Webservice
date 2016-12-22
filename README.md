@@ -4,7 +4,28 @@
 ## Pour adapter ce projet à vos projets en partant de ce repo
 
 - Pour la base de données, vous pourrez modifier le fichier /src/settings.php .
-- Pour la gestion de la récupération des données (PDO,MySql...) vous pouvez adapter les dépendances du projet depuis /src/dependencies.php . A savoir que l'utf8 n'était pas présent sur le projet par défaut.
+
+>        'db' => [
+>            'host' => 'localhost',
+>            'dbname' => 'webservice',
+>            'user' => 'root',
+>            'pass' => '',
+>        ],
+>
+
+- Pour la gestion de la récupération des données (PDO,MySql...) vous pouvez adapter les dépendances du projet depuis /src/dependencies.php . A savoir que l'encodage utf8 n'était pas présent sur le projet par défaut.
+
+>// Database connection
+>$container['db'] = function ($c) {
+>    $settings = $c->get('settings')['db'];
+>    $pdo = new PDO("mysql:host=" . $settings['host'] . ";dbname=" . $settings['dbname'],
+>        $settings['user'], $settings['pass']);
+>    $pdo-> exec("set names utf8");
+>    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+>    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+>    return $pdo;
+>};
+
 - Pour gérer les routes, ça se passe dans le fichier /src/routes.php .
 - Le fichier /src/middleware.php permet de mettre en place une sécurisation par API key par exemple. 
 
